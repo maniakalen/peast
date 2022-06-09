@@ -221,6 +221,9 @@ class Renderer
                 } else {
                     $optional = $node->getOptional();
                 }
+                if ($type === "CallExpression" && $node->getAwait()) {
+                    $code .= 'await ';
+                }
                 $code .= $this->renderNode($node->getCallee()) .
                          ($optional ? "?." : "") .
                          "(" .
@@ -1072,6 +1075,7 @@ class Renderer
             } elseif (!in_array($type, $optBracketNodes)) {
                 return Traverser::DONT_TRAVERSE_CHILD_NODES;
             }
+            return null;
         };
         $node->traverse($checkFn);
         return $forceBrackets;

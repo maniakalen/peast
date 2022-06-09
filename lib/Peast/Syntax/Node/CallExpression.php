@@ -24,7 +24,8 @@ class CallExpression extends ChainElement
      */
     protected $propertiesMap = array(
         "callee" => true,
-        "arguments" => true
+        "arguments" => true,
+        'await' => false
     );
     
     /**
@@ -40,7 +41,14 @@ class CallExpression extends ChainElement
      * @var Expression[]|SpreadElement[]
      */
     protected $arguments = array();
-    
+
+    /**
+     * Defines whether this call should be with await
+     *
+     * @var boolean $await
+     */
+    protected $await;
+
     /**
      * Returns the callee expression
      * 
@@ -49,6 +57,22 @@ class CallExpression extends ChainElement
     public function getCallee()
     {
         return $this->callee;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getAwait()
+    {
+        return $this->await;
+    }
+
+    /**
+     * @param bool $await
+     */
+    public function setAwait($await)
+    {
+        $this->await = $await;
     }
     
     /**

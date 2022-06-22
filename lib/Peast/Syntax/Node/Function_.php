@@ -9,6 +9,9 @@
  */
 namespace Peast\Syntax\Node;
 
+use Peast\Events\Event;
+use Peast\Events\PropertyChangeEvent;
+
 /**
  * Abstract class for functions.
  * 
@@ -178,6 +181,7 @@ abstract class Function_ extends Node
      */
     public function setAsync($async)
     {
+        $this->triggerPropertyChangeEvent('async', $this->async, (bool) $async);
         $this->async = (bool) $async;
         return $this;
     }

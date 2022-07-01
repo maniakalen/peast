@@ -36,7 +36,17 @@ abstract class Node extends Dispatcher implements \JSONSerializable
         "leadingComments" => false,
         "trailingComments" => false
     );
-    
+
+    /**
+     * @var Node
+     */
+    protected $parent;
+
+    /**
+     * @var array
+     */
+    protected $children = [];
+
     /**
      * Node location in the source code
      * 
@@ -331,5 +341,63 @@ abstract class Node extends Dispatcher implements \JSONSerializable
         } else {
             trigger_error($msg, E_USER_ERROR);
         }
+    }
+
+    /**
+     * @param $parent
+     * @return void
+     */
+    public function setParent($parent)
+    {
+        $this->parent = $parent;
+    }
+
+    /**
+     * @return Node
+     */
+    public function getParent()
+    {
+        return $this->parent;
+    }
+
+    /**
+     * @param $child
+     * @return void
+     */
+    public function addChild($child)
+    {
+        $this->children[] = $child;
+    }
+
+    /**
+     * @param $k
+     * @param $child
+     * @return void
+     */
+    public function replaceChild($k, $child)
+    {
+        $this->children[$k] = $child;
+    }
+
+    /**
+     * @param $child
+     * @param $k
+     * @return void
+     */
+    public function removeChild($child, $k)
+    {
+        if ($child) {
+            $k = array_search($child, $this->children);
+        }
+
+        array_splice($this->children, $k, 1);
+    }
+
+    /**
+     * @return array
+     */
+    public function getChildren()
+    {
+        return $this->children;
     }
 }

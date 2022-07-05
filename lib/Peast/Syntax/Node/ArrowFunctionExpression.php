@@ -44,6 +44,7 @@ class ArrowFunctionExpression extends Function_ implements Expression
     {
         $this->assertType($body, array("BlockStatement", "Expression"));
         $this->body = $body;
+        $this->addChild($body);
         return $this;
     }
     

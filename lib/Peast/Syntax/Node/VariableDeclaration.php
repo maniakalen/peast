@@ -78,6 +78,9 @@ class VariableDeclaration extends Node implements Declaration
     {
         $this->assertArrayOf($declarations, "VariableDeclarator");
         $this->declarations = $declarations;
+        foreach ($this->declarations as $dec) {
+            $this->addChild($dec);
+        }
         return $this;
     }
     

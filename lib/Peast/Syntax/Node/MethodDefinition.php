@@ -107,6 +107,7 @@ class MethodDefinition extends Node
     {
         $this->assertType($key, array("Expression", "PrivateIdentifier"));
         $this->key = $key;
+        $this->addChild($key);
         return $this;
     }
     
@@ -130,6 +131,7 @@ class MethodDefinition extends Node
     public function setValue(FunctionExpression $value)
     {
         $this->value = $value;
+        $this->addChild($value);
         return $this;
     }
     

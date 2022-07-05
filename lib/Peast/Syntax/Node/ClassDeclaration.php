@@ -28,6 +28,7 @@ class ClassDeclaration extends Class_ implements Declaration
     {
         $this->assertType($id, "Identifier");
         $this->id = $id;
+        $this->addChild($id);
         return $this;
     }
 }

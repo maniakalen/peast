@@ -68,6 +68,7 @@ class TryStatement extends Node implements Statement
     public function setBlock(BlockStatement $block)
     {
         $this->block = $block;
+        $this->addChild($block);
         return $this;
     }
     
@@ -92,6 +93,7 @@ class TryStatement extends Node implements Statement
     {
         $this->assertType($handler, "CatchClause", true);
         $this->handler = $handler;
+        $this->addChild($handler);
         return $this;
     }
     
@@ -116,6 +118,7 @@ class TryStatement extends Node implements Statement
     {
         $this->assertType($finalizer, "BlockStatement", true);
         $this->finalizer = $finalizer;
+        $this->addChild($finalizer);
         return $this;
     }
 }

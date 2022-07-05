@@ -61,6 +61,7 @@ class DoWhileStatement extends Node implements Statement
     public function setBody(Statement $body)
     {
         $this->body = $body;
+        $this->addChild($body);
         return $this;
     }
     
@@ -84,6 +85,7 @@ class DoWhileStatement extends Node implements Statement
     public function setTest(Expression $test)
     {
         $this->test = $test;
+        $this->addChild($test);
         return $this;
     }
 }

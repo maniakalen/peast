@@ -61,6 +61,7 @@ class TaggedTemplateExpression extends Node implements Expression
     public function setTag(Expression $tag)
     {
         $this->tag = $tag;
+        $this->addChild($tag);
         return $this;
     }
     
@@ -84,6 +85,7 @@ class TaggedTemplateExpression extends Node implements Expression
     public function setQuasi(TemplateLiteral $quasi)
     {
         $this->quasi = $quasi;
+        $this->addChild($quasi);
         return $this;
     }
 }

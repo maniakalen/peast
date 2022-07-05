@@ -54,6 +54,7 @@ class ExportDefaultDeclaration extends Node implements ModuleDeclaration
     {
         $this->assertType($declaration, array("Declaration", "Expression"));
         $this->declaration = $declaration;
+        $this->addChild($declaration);
         return $this;
     }
 }

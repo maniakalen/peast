@@ -60,6 +60,7 @@ class LabeledStatement extends Node implements Statement
     public function setLabel(Identifier $label)
     {
         $this->label = $label;
+        $this->addChild($label);
         return $this;
     }
     
@@ -83,6 +84,7 @@ class LabeledStatement extends Node implements Statement
     public function setBody(Statement $body)
     {
         $this->body = $body;
+        $this->addChild($body);
         return $this;
     }
 }

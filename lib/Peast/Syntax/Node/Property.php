@@ -111,6 +111,7 @@ class Property extends Node
     public function setKey(Expression $key)
     {
         $this->key = $key;
+        $this->addChild($key);
         return $this;
     }
     
@@ -135,6 +136,7 @@ class Property extends Node
     {
         $this->assertType($value, "Expression");
         $this->value = $value;
+        $this->addChild($value);
         return $this;
     }
     

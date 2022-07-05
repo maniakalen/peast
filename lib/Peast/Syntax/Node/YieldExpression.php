@@ -61,6 +61,7 @@ class YieldExpression extends Node implements Expression
     {
         $this->assertType($argument, "Expression", true);
         $this->argument = $argument;
+        $this->addChild($argument);
         return $this;
     }
     

@@ -69,6 +69,7 @@ class ConditionalExpression extends Node implements Expression
     public function setTest(Expression $test)
     {
         $this->test = $test;
+        $this->addChild($test);
         return $this;
     }
     
@@ -92,6 +93,7 @@ class ConditionalExpression extends Node implements Expression
     public function setConsequent(Expression $consequent)
     {
         $this->consequent = $consequent;
+        $this->addChild($consequent);
         return $this;
     }
     
@@ -115,6 +117,7 @@ class ConditionalExpression extends Node implements Expression
     public function setAlternate(Expression $alternate)
     {
         $this->alternate = $alternate;
+        $this->addChild($alternate);
         return $this;
     }
 }

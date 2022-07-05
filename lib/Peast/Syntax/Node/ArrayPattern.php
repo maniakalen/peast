@@ -54,6 +54,7 @@ class ArrayPattern extends Node implements Pattern
     {
         $this->assertArrayOf($elements, "Pattern", true);
         $this->elements = $elements;
+        $this->setChildren($elements);
         return $this;
     }
 }

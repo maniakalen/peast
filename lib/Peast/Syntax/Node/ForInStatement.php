@@ -72,6 +72,7 @@ class ForInStatement extends Node implements Statement
             $left, array("VariableDeclaration", "Expression", "Pattern")
         );
         $this->left = $left;
+        $this->addChild($left);
         return $this;
     }
     
@@ -95,6 +96,7 @@ class ForInStatement extends Node implements Statement
     public function setRight(Expression $right)
     {
         $this->right = $right;
+        $this->addChild($right);
         return $this;
     }
     
@@ -118,6 +120,7 @@ class ForInStatement extends Node implements Statement
     public function setBody(Statement $body)
     {
         $this->body = $body;
+        $this->addChild($body);
         return $this;
     }
 }

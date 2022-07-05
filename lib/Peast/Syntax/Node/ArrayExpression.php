@@ -58,6 +58,7 @@ class ArrayExpression extends Node implements Expression
             true
         );
         $this->elements = $elements;
+        $this->setChildren($elements);
         return $this;
     }
 }

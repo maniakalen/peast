@@ -362,21 +362,39 @@ abstract class Node extends Dispatcher implements \JSONSerializable
 
     /**
      * @param $child
-     * @return void
+     * @return Node
      */
     public function addChild($child)
     {
         $this->children[] = $child;
+        if ($child instanceof Node) {
+            $child->setParent($this);
+        }
+        return $this;
+    }
+
+    /**
+     * @param $children
+     * @return $this
+     */
+    public function setChildren($children)
+    {
+        $this->children = $children;
+        foreach ($this->children as &$item) {
+            $item->setParent($this);
+        }
+        return $this;
     }
 
     /**
      * @param $k
      * @param $child
-     * @return void
+     * @return Node
      */
     public function replaceChild($k, $child)
     {
         $this->children[$k] = $child;
+        return $this;
     }
 
     /**
@@ -391,6 +409,7 @@ abstract class Node extends Dispatcher implements \JSONSerializable
         }
 
         array_splice($this->children, $k, 1);
+        return $this;
     }
 
     /**

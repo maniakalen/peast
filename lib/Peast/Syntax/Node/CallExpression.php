@@ -86,6 +86,7 @@ class CallExpression extends ChainElement
     {
         $this->assertType($callee, array("Expression", "Super"));
         $this->callee = $callee;
+        $this->addChild($callee);
         return $this;
     }
     
@@ -110,6 +111,9 @@ class CallExpression extends ChainElement
     {
         $this->assertArrayOf($arguments, array("Expression", "SpreadElement"));
         $this->arguments = $arguments;
+        foreach ($arguments as $arg) {
+            $this->addChild($arg);
+        }
         return $this;
     }
 }

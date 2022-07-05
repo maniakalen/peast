@@ -61,6 +61,7 @@ class SwitchCase extends Node
     {
         $this->assertType($test, "Expression", true);
         $this->test = $test;
+        $this->addChild($test);
         return $this;
     }
     
@@ -85,6 +86,9 @@ class SwitchCase extends Node
     {
         $this->assertArrayOf($consequent, "Statement");
         $this->consequent = $consequent;
+        foreach ($this->consequent as $cons) {
+            $this->addCHild($cons);
+        }
         return $this;
     }
 }

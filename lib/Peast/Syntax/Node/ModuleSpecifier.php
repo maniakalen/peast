@@ -55,6 +55,7 @@ abstract class ModuleSpecifier extends Node
     {
         $this->assertType($local, array("Identifier", "StringLiteral"));
         $this->local = $local;
+        $this->addChild($local);
         return $this;
     }
 }

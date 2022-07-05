@@ -69,6 +69,7 @@ class IfStatement extends Node implements Statement
     public function setTest(Expression $test)
     {
         $this->test = $test;
+        $this->addChild($test);
         return $this;
     }
     
@@ -97,6 +98,7 @@ class IfStatement extends Node implements Statement
             true
         );
         $this->consequent = $consequent;
+        $this->addChild($consequent);
         return $this;
     }
     
@@ -125,6 +127,7 @@ class IfStatement extends Node implements Statement
             true
         );
         $this->alternate = $alternate;
+        $this->addChild($alternate);
         return $this;
     }
 }

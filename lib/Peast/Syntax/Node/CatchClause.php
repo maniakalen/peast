@@ -61,6 +61,7 @@ class CatchClause extends Node
     {
         $this->assertType($param, "Pattern", true);
         $this->param = $param;
+        $this->addChild($param);
         return $this;
     }
     
@@ -84,6 +85,7 @@ class CatchClause extends Node
     public function setBody(BlockStatement $body)
     {
         $this->body = $body;
+        $this->addChild($body);
         return $this;
     }
 }

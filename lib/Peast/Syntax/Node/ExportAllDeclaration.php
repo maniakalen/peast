@@ -61,6 +61,7 @@ class ExportAllDeclaration extends Node implements ModuleDeclaration
     public function setSource(Literal $source)
     {
         $this->source = $source;
+        $this->addChild($source);
         return $this;
     }
 
@@ -85,6 +86,7 @@ class ExportAllDeclaration extends Node implements ModuleDeclaration
     {
         $this->assertType($exported, array("Identifier", "StringLiteral"), true);
         $this->exported = $exported;
+        $this->addChild($exported);
         return $this;
     }
 }

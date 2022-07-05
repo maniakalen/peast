@@ -69,6 +69,7 @@ class LogicalExpression extends Node implements Expression
     public function setOperator($operator)
     {
         $this->operator = $operator;
+        $this->addChild($operator);
         return $this;
     }
     
@@ -92,6 +93,7 @@ class LogicalExpression extends Node implements Expression
     public function setLeft(Expression $left)
     {
         $this->left = $left;
+        $this->addChild($left);
         return $this;
     }
     
@@ -115,6 +117,7 @@ class LogicalExpression extends Node implements Expression
     public function setRight(Expression $right)
     {
         $this->right = $right;
+        $this->addChild($right);
         return $this;
     }
 }

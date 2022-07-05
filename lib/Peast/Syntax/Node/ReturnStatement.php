@@ -54,6 +54,7 @@ class ReturnStatement extends Node implements Statement
     {
         $this->assertType($argument, "Expression", true);
         $this->argument = $argument;
+        $this->addChild($argument);
         return $this;
     }
 }

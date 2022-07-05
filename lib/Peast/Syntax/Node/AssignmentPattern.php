@@ -61,6 +61,7 @@ class AssignmentPattern extends Node implements Pattern
     public function setLeft(Pattern $left)
     {
         $this->left = $left;
+        $this->addChild($left);
         return $this;
     }
     
@@ -84,6 +85,7 @@ class AssignmentPattern extends Node implements Pattern
     public function setRight(Expression $right)
     {
         $this->right = $right;
+        $this->addChild($right);
         return $this;
     }
 }

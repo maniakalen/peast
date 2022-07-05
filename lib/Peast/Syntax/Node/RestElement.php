@@ -54,6 +54,7 @@ class RestElement extends Node implements Pattern
     public function setArgument(Pattern $argument)
     {
         $this->argument = $argument;
+        $this->addChild($argument);
         return $this;
     }
 }

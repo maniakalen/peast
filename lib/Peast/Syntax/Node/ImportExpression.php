@@ -52,6 +52,7 @@ class ImportExpression extends Node implements Expression
     public function setSource(Expression $source)
     {
         $this->source = $source;
+        $this->addChild($source);
         return $this;
     }
 }

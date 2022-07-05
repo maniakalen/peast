@@ -54,6 +54,7 @@ class ImportSpecifier extends ModuleSpecifier
     {
         $this->assertType($imported, array("Identifier", "StringLiteral"));
         $this->imported = $imported;
+        $this->addChild($imported);
         return $this;
     }
 }

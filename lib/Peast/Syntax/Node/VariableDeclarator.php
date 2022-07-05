@@ -61,6 +61,7 @@ class VariableDeclarator extends Node
     public function setId(Pattern $id)
     {
         $this->id = $id;
+        $this->addChild($id);
         return $this;
     }
     
@@ -85,6 +86,7 @@ class VariableDeclarator extends Node
     {
         $this->assertType($init, "Expression", true);
         $this->init = $init;
+        $this->addChild($init);
         return $this;
     }
 }

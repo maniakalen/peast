@@ -93,6 +93,7 @@ class BinaryExpression extends Node implements Expression
     {
         $this->assertType($left, array("Expression", "PrivateIdentifier"));
         $this->left = $left;
+        $this->addChild($left);
         return $this;
     }
     
@@ -116,6 +117,7 @@ class BinaryExpression extends Node implements Expression
     public function setRight(Expression $right)
     {
         $this->right = $right;
+        $this->addChild($right);
         return $this;
     }
 }

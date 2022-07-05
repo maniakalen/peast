@@ -61,6 +61,7 @@ class SwitchStatement extends Node implements Statement
     public function setDiscriminant(Expression $discriminant)
     {
         $this->discriminant = $discriminant;
+        $this->addChild($discriminant);
         return $this;
     }
     
@@ -85,6 +86,9 @@ class SwitchStatement extends Node implements Statement
     {
         $this->assertArrayOf($cases, "SwitchCase");
         $this->cases = $cases;
+        foreach ($this->cases as $case) {
+            $this->addChild($cases);
+        }
         return $this;
     }
 }

@@ -63,6 +63,9 @@ class TemplateLiteral extends Node implements Expression
     {
         $this->assertArrayOf($quasis, "TemplateElement");
         $this->quasis = $quasis;
+        foreach ($this->quasis as $q) {
+            $this->addChild($q);
+        }
         return $this;
     }
     
@@ -87,6 +90,7 @@ class TemplateLiteral extends Node implements Expression
     {
         $this->assertArrayOf($expressions, "Expression");
         $this->expressions = $expressions;
+        $this->addChild($expressions);
         return $this;
     }
     

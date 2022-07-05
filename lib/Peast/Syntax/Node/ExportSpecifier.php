@@ -54,6 +54,7 @@ class ExportSpecifier extends ModuleSpecifier
     {
         $this->assertType($exported, array("Identifier", "StringLiteral"));
         $this->exported = $exported;
+        $this->addChild($exported);
         return $this;
     }
 }

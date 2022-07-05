@@ -69,6 +69,7 @@ abstract class Class_ extends Node
     {
         $this->assertType($id, "Identifier", true);
         $this->id = $id;
+        $this->addChild($id);
         return $this;
     }
     
@@ -93,6 +94,7 @@ abstract class Class_ extends Node
     {
         $this->assertType($superClass, "Expression", true);
         $this->superClass = $superClass;
+        $this->addChild($superClass);
         return $this;
     }
     
@@ -117,6 +119,7 @@ abstract class Class_ extends Node
     {
         $this->assertType($body, "ClassBody");
         $this->body = $body;
+        $this->addChild($body);
         return $this;
     }
 }

@@ -52,6 +52,7 @@ class ExpressionStatement extends Node implements Statement
     public function setExpression(Expression $expression)
     {
         $this->expression = $expression;
+        $this->addChild($expression);
         return $this;
     }
 }

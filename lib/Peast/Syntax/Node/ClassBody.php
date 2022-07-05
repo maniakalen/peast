@@ -56,6 +56,7 @@ class ClassBody extends Node
             array("MethodDefinition", "PropertyDefinition", "StaticBlock")
         );
         $this->body = $body;
+        $this->addChild($body);
         return $this;
     }
 }

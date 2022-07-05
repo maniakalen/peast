@@ -69,6 +69,7 @@ class ImportDeclaration extends Node implements ModuleDeclaration
             )
         );
         $this->specifiers = $specifiers;
+        $this->addChild($specifiers);
         return $this;
     }
     
@@ -92,6 +93,7 @@ class ImportDeclaration extends Node implements ModuleDeclaration
     public function setSource(Literal $source)
     {
         $this->source = $source;
+        $this->addChild($source);
         return $this;
     }
 }

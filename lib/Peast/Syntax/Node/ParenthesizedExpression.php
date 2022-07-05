@@ -52,6 +52,7 @@ class ParenthesizedExpression extends Node implements Expression
     public function setExpression(Expression $expression)
     {
         $this->expression = $expression;
+        $this->addChild($expression);
         return $this;
     }
 }

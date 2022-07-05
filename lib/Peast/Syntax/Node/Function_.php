@@ -88,6 +88,7 @@ abstract class Function_ extends Node
     {
         $this->assertType($id, "Identifier", true);
         $this->id = $id;
+        $this->children[] = $id;
         return $this;
     }
     
@@ -136,6 +137,7 @@ abstract class Function_ extends Node
     {
         $this->assertType($body, "BlockStatement");
         $this->body = $body;
+        $this->children[] = $body;
         return $this;
     }
     

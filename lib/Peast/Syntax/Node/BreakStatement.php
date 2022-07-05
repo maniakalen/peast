@@ -53,6 +53,7 @@ class BreakStatement extends Node implements Statement
     {
         $this->assertType($label, "Identifier", true);
         $this->label = $label;
+        $this->addChild($label);
         return $this;
     }
 }

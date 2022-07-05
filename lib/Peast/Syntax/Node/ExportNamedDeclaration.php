@@ -70,6 +70,7 @@ class ExportNamedDeclaration extends Node implements ModuleDeclaration
     {
         $this->assertType($declaration, "Declaration", true);
         $this->declaration = $declaration;
+        $this->addChild($declaration);
         return $this;
     }
     
@@ -94,6 +95,7 @@ class ExportNamedDeclaration extends Node implements ModuleDeclaration
     {
         $this->assertArrayOf($specifiers, "ExportSpecifier");
         $this->specifiers = $specifiers;
+        $this->addChild($specifiers);
         return $this;
     }
     
@@ -118,6 +120,7 @@ class ExportNamedDeclaration extends Node implements ModuleDeclaration
     {
         $this->assertType($source, "Literal", true);
         $this->source = $source;
+        $this->addChild($source);
         return $this;
     }
 }

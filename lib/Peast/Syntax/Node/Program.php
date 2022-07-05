@@ -89,6 +89,7 @@ class Program extends Node
     {
         $this->assertArrayOf($body, array("Statement", "ModuleDeclaration"));
         $this->body = $body;
+        $this->addChild($body);
         return $this;
     }
 

@@ -61,6 +61,7 @@ class WithStatement extends Node implements Statement
     public function setObject(Expression $object)
     {
         $this->object = $object;
+        $this->addChild($object);
         return $this;
     }
     
@@ -84,6 +85,7 @@ class WithStatement extends Node implements Statement
     public function setBody(Statement $body)
     {
         $this->body = $body;
+        $this->addChild($body);
         return $this;
     }
 }

@@ -54,6 +54,9 @@ class ObjectExpression extends Node implements Expression
     {
         $this->assertArrayOf($properties, array("Property", "SpreadElement"));
         $this->properties = $properties;
+        foreach ($this->properties as &$prop) {
+            $this->addChild($prop);
+        }
         return $this;
     }
 }

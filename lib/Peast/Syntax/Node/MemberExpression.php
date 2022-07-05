@@ -71,6 +71,7 @@ class MemberExpression extends ChainElement implements Pattern
     {
         $this->assertType($object, array("Expression", "Super"));
         $this->object = $object;
+        $this->addChild($object);
         return $this;
     }
     
@@ -95,6 +96,7 @@ class MemberExpression extends ChainElement implements Pattern
     {
         $this->assertType($property, array("Expression", "PrivateIdentifier"));
         $this->property = $property;
+        $this->addChild($property);
         return $this;
     }
     

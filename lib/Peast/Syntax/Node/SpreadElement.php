@@ -54,6 +54,7 @@ class SpreadElement extends Node
     public function setArgument(Expression $argument)
     {
         $this->argument = $argument;
+        $this->addChild($argument);
         return $this;
     }
 }

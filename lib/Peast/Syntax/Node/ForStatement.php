@@ -81,6 +81,7 @@ class ForStatement extends Node implements Statement
             true
         );
         $this->init = $init;
+        $this->addChild($init);
         return $this;
     }
     
@@ -105,6 +106,7 @@ class ForStatement extends Node implements Statement
     {
         $this->assertType($test, "Expression", true);
         $this->test = $test;
+        $this->addChild($test);
         return $this;
     }
     
@@ -129,6 +131,7 @@ class ForStatement extends Node implements Statement
     {
         $this->assertType($update, "Expression", true);
         $this->update = $update;
+        $this->addChild($update);
         return $this;
     }
     
@@ -152,6 +155,7 @@ class ForStatement extends Node implements Statement
     public function setBody(Statement $body)
     {
         $this->body = $body;
+        $this->addChild($body);
         return $this;
     }
 }

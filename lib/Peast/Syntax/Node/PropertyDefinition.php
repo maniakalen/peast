@@ -78,6 +78,7 @@ class PropertyDefinition extends Node
     {
         $this->assertType($key, array("Expression", "PrivateIdentifier"));
         $this->key = $key;
+        $this->addChild($key);
         return $this;
     }
     
@@ -102,6 +103,7 @@ class PropertyDefinition extends Node
     {
         $this->assertType($value, "Expression", true);
         $this->value = $value;
+        $this->addChild($value);
         return $this;
     }
     

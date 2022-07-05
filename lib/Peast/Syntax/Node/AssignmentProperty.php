@@ -38,6 +38,7 @@ class AssignmentProperty extends Property
     {
         $this->assertType($value, "Pattern");
         $this->value = $value;
+        $this->addChild($value);
         return $this;
     }
     

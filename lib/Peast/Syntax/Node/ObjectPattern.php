@@ -54,6 +54,9 @@ class ObjectPattern extends Node implements Pattern
     {
         $this->assertArrayOf($properties, array("AssignmentProperty", "RestElement"));
         $this->properties = $properties;
+        foreach ($this->properties as &$prop) {
+            $this->addChild($prop);
+        }
         return $this;
     }
 }

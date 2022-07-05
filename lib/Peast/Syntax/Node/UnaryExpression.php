@@ -118,6 +118,7 @@ class UnaryExpression extends Node implements Expression
     public function setArgument(Expression $argument)
     {
         $this->argument = $argument;
+        $this->addChild($argument);
         return $this;
     }
 }

@@ -54,6 +54,9 @@ class BlockStatement extends Node implements Statement
     {
         $this->assertArrayOf($body, "Statement");
         $this->body = $body;
+        foreach ($this->body as $b) {
+            $this->addChild($b);
+        }
         return $this;
     }
 }

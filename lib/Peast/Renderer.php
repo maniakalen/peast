@@ -121,8 +121,9 @@ class Renderer
      * 
      * @return string
      */
-    protected function renderNode(Syntax\Node\Node $node, $addSemicolon = false)
+    protected function renderNode($node, $addSemicolon = false)
     {
+        if ($node === null) { return ''; }
         $code = "";
         if ($this->renderOpts->com) {
             $code .= $this->renderComments($node);

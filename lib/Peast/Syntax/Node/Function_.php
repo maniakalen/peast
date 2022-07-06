@@ -88,7 +88,7 @@ abstract class Function_ extends Node
     {
         $this->assertType($id, "Identifier", true);
         $this->id = $id;
-        $this->children[] = $id;
+        $this->addChild($id);
         return $this;
     }
     
@@ -113,6 +113,9 @@ abstract class Function_ extends Node
     {
         $this->assertArrayOf($params, "Pattern");
         $this->params = $params;
+        foreach ($this->params as $param) {
+            $this->addChild($param);
+        }
         return $this;
     }
     
@@ -137,7 +140,7 @@ abstract class Function_ extends Node
     {
         $this->assertType($body, "BlockStatement");
         $this->body = $body;
-        $this->children[] = $body;
+        $this->addChild($body);
         return $this;
     }
     

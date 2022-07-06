@@ -55,7 +55,7 @@ class SequenceExpression  extends Node implements Expression
         $this->assertArrayOf($expressions, "Expression");
         $this->expressions = $expressions;
         foreach ($this->expressions as $exp) {
-            $this->addCHild($exp);
+            $this->addChild($exp);
         }
         return $this;
     }

@@ -52,7 +52,7 @@ class AwaitExpression extends Node implements Expression
     public function setArgument(Expression $argument)
     {
         $this->argument = $argument;
-        $this->addCHild($argument);
+        $this->addChild($argument);
         return $this;
     }
 }

@@ -92,6 +92,7 @@ class AssignmentExpression extends Node implements Expression
     public function setLeft($left)
     {
         $this->assertType($left, array("Pattern", "Expression"));
+        $this->left = $left;
         $this->addChild($left);
         return $this;
     }

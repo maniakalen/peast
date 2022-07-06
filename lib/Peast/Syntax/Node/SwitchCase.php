@@ -87,7 +87,7 @@ class SwitchCase extends Node
         $this->assertArrayOf($consequent, "Statement");
         $this->consequent = $consequent;
         foreach ($this->consequent as $cons) {
-            $this->addCHild($cons);
+            $this->addChild($cons);
         }
         return $this;
     }

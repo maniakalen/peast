@@ -186,8 +186,9 @@ abstract class Function_ extends Node
      */
     public function setAsync($async)
     {
-        $this->triggerPropertyChangeEvent('async', $this->async, (bool) $async);
+        $oldAsync = $this->async;
         $this->async = (bool) $async;
+        $this->triggerPropertyChangeEvent('async', $oldAsync, (bool) $async);
         return $this;
     }
 }

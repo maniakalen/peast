@@ -72,7 +72,10 @@ class CallExpression extends ChainElement
      */
     public function setAwait($await)
     {
+        $oldAwait = $this->await;
         $this->await = $await;
+        $this->triggerPropertyChangeEvent('await', $oldAwait, (bool) $await);
+        return $this;
     }
     
     /**
